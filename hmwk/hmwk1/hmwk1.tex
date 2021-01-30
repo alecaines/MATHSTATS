@@ -31,19 +31,29 @@
 \begin{enumerate}
 	\item[1.]
 		\begin{enumerate}
-			\item[(a)] Since the calculated t-statistic, 4.81, is greater than the calculated critical value 
-				of 4.32, the null hypothesis---that the concentration in the sampled region exceeds the stated
-				 background value---is accepted. The result does not surprise me because 45.31 is much greater than 20.
+			\item[(a)] Since the calculated t-statistic, 4.81, is less than the calculated critical value 
+				of 7.96, the null hypothesis---that the concentration in the sampled region exceeds the stated
+				 background value---is rejected. The result surprises me as the concentration, 45.31 is much greater 
+				 than the background, 20. However, because the sample size of the population is only 3, an inaccurate result from the above test can be expected.
+				 \begin{tcolorbox}[colback=white, title=Work, coltitle=white]
+					 \texttt{[1] $n=3$; $\bar{x} = 45.31$; ste=5.26; $\mu_0 = 20$}\\
+					 \texttt{[2] t = ($\bar{x}-\mu_0$)/(ste)}\\
+					 \texttt{[3] 1-qt(0.01, 2)}\\
+				 \end{tcolorbox}
 				%The observed average 45.31 is greater than the actual (20) by more than 5.26.
 				%Furthermore, after carrying out a significance test at 0.01, the 
 				%z score was found to be 8.34, which falls into the rejection region as it 
 				%is greater than 7.76. In the end, the result does not surprise me.
-			\item[(b)] Given that the p-value is 0.99, I would say that it is extremely likely.
+			%\item[(b)] Given that the p-value is 0.99, I would say that it is extremely likely.
+			%	 \begin{tcolorbox}[colback=white, title=Work, coltitle=white]
+
+			%		\texttt{[1] 1-pnorm(0.01, 50, 10) }
+			%	 \end{tcolorbox}
 		\end{enumerate}
-	\item[* 2.]
+	\item[2.]
 		\begin{enumerate}
-			\item[(a)] Despite the fact that the distribution 
-				is not normal (the proposed mean is nowhere near the median fo the range provided),
+		 	\item[(a)] Despite the fact that the distribution 
+				is not normal (the proposed mean is nowhere near the median of the range provided),
 				because there are sufficiently 
 				many entries in the population, the central 
 				limit theorem allows us to test the hypothesis 
@@ -52,21 +62,52 @@
 			\item[(b)] Upon running a t-test, under the following hypothesis $$H_0: \mu<200, H_a: \mu > 200$$
 				did not fall under the critical region. So the null is rejected, implying that the mean consumption 
 				was not at most 200mg.
+				 \begin{tcolorbox}[colback=white, title=Work, coltitle=white]
+					 \texttt{[1] n = 47; $\bar{x} = 215$; s = 235; $\mu_0 = 200$ }\\
+					 \texttt{[2] t = ($\bar{x} - \mu_0$)/(s/$\sqrt{n}$) \# test statistic}\\
+					 \texttt{[3] qt(0.01, 46, lower.tail=FALSE) \# t critical value}\\
+				 \end{tcolorbox}
 		\end{enumerate}
 	\item[3.] No, the data does not suggest that the condition has not 
 		been met as the average is within the critical region.
+
+				 \begin{tcolorbox}[colback=white, title=Work, coltitle=white]
+					 \texttt{[1] data <- read.csv('HW1prob3.csv')[,1]}\\
+					 \texttt{[2] n = length(data)}\\
+					 \texttt{[3] $\bar{x} = $ mean(data)}\\
+					 \texttt{[4] $\mu_0 = 9.75$ }\\
+					 \texttt{[5] std = sd(data) }\\
+					 \texttt{[6] qt(0.1, n, lower.tail=FALSE)}
+				 \end{tcolorbox}
 	\item[4.]
 		\begin{enumerate}
 			\item[(a)] The relevant test statistic in this case would be testing for proportion. 
-				Consider the following hypothesis: $$H_0: p\hat{}=p_0 $$
-				$$H_a: p_0 > \frac{1}{75} \text{ or } \frac{1}{75} < -p\hat{}$$
-				It can be concluded that the rate of teh chromosome defect in question 
-				differs from the presumed rate. A Type 1 Error could have been made when arriving at the conclusion.
+				Consider the following hypothesis: $$H_0: \hat{p}=p_0 $$
+				$$H_a: p_0 < \frac{1}{75} \text{ or } -\frac{1}{75} < p_0$$
+				 Since the pvalue is greater than the significance level (0.05), it cannot be 
+				 concluded that the incidence rate of the defect among prisoners differs from 
+				 the presumed rate for the entire male population. A Type 2 Error could have been made when arriving at the conclusion.
 
-			\item[(b)] The pnorm calculated came out to be 0.089. So, 
+		\begin{tcolorbox}[colback=white, title=Work, coltitle=white]
+			\texttt{[1] $\hat{p}=16/800$; $p_0 = 1/75$; n = 800}\\
+			\texttt{[2] z = ($\hat{p} - p_0$)/($\sqrt{p_0\cdot(1-p_0)/n}$)}\\
+			\texttt{[3] qnorm(0.975) \# compare to z score}\\
+			\texttt{[4] pvalue=2*(1-pnorm(1.75))\# greater than significance level 0.05}\\ 
+		\end{tcolorbox}
+
+			\item[(b)] The pvalue calculated came out to be 0.074, which is greater than 0.05. So, 
 				it would have been rejected at a significance level of 0.2.
+		\begin{tcolorbox}[colback=white, title=Work, coltitle=white]
+			\texttt{[1] 2*(1-pnorm(1.74)) > 0.05 \# Returns TRUE}\\
+		\end{tcolorbox}
 		\end{enumerate}
-	\item[5.] Since the calculated zscore was 0.74 and the associated pnorm was 0.77, both of which are greater than
-		the expected proportion, 0.10, it can be concluded that more than 10\% of the population has abstained from alcohol use.
+	\item[5.] Since the calculated zscore was 0.74 and is less than the calculated critical value (1.65), we fail to reject the null under an upper 
+		tail test at significance level 0.05. So, it cannot be concluded that more than 10\% of the population has abstained from alcohol use.
+
+		\begin{tcolorbox}[colback=white, title=Work, coltitle=white]
+					 \texttt{[1] $\hat{p} = 51/462$; $p_0 = 0.1$; n=462}\\
+					 \texttt{[2] z = ($\hat{p} -p_0$)/($\sqrt{p_0\cdot(1-p_0)/n})$}\\
+					 \texttt{[3] qnorm(0.95)}
+				 \end{tcolorbox}
 \end{enumerate}
 \end{document}

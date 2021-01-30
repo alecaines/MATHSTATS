@@ -46,7 +46,7 @@ p0 = 1/50
 print(p0)
 n3 = 800
 z = (phat - p0)/(sqrt(p0*(1-p0)/n3))
-pnorm(z)
+qnorm(0.2)
 
 #5
 print('---------')

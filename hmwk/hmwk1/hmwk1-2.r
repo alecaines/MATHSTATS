@@ -7,8 +7,9 @@ mu01=20
 
 t = (xbar1-mu01)/(e)
 print(t)
-qnorm(0.01, 2, lower.tail=FALSE)
-1-pnorm(0.01, 50, 10)
+1-qt(0.01, 2)
+#1b
+1-qt(0.01, 50, 10)
 #2
 ##2a
 ##2b
@@ -23,13 +24,32 @@ print(t)
 qt(0.01, 46, lower.tail=FALSE) #t critical value
 
 #3
-n3 = 20
-xbar3 = (9.85 +9.94 +9.88 +9.93 +9.85 +9.95 +9.75 +9.75 +9.95 +9.77 +9.83 +9.93 +9.67 +9.92 +9.92 +9.87 +9.74 +9.89 +9.67 +9.99)/n3
+print("Problem 3")
+data <-read.csv('HW1prob3.csv')[,1]
+n3 = length(data)
+xbar3 = mean(data)
 mu03 = 9.75
-std = 0.00930
+std = sd(data) 
 print(xbar3)
 qt(0.1, n3, lower.tail=FALSE)
 
+#vector <- dataset[,c], c is a column
+#std(dataset[,1])
+
+#4a
+print("problem 4a")
+n4 = 800
+phat4 = 16/800
+p04 = 1/75
+z4 = (phat4 - p04)/(sqrt(p04*(1-p04)/n4))
+print(z4)
+qnorm(0.975)
+pvalue=2*(1-pnorm(1.75))
+print(pvalue)
+#4b
+print("prblem 4b")
+pvalueb = 2*(1-pnorm(1.74))
+print(pvalueb > 0.05)
 #5
 print("Problem 5")
 phat=51/462
@@ -37,3 +57,4 @@ p0=.1
 n=462
 z = (phat-p0)/(sqrt(p0*(1-p0)/n))
 print(z)
+qnorm(0.95)
