@@ -9,7 +9,8 @@ t = (xbar1-mu01)/(e)
 print(t)
 1-qt(0.01, 2)
 #1b
-1-qt(0.01, 50, 10)
+#print("Problem 1b")
+#1-qt(0.01, 50, 10)
 #2
 ##2a
 ##2b
@@ -27,11 +28,16 @@ qt(0.01, 46, lower.tail=FALSE) #t critical value
 print("Problem 3")
 data <-read.csv('HW1prob3.csv')[,1]
 n3 = length(data)
+print(n3)
 xbar3 = mean(data)
+print(xbar3)
 mu03 = 9.75
 std = sd(data) 
-print(xbar3)
-qt(0.1, n3, lower.tail=FALSE)
+print(std)
+
+t=(xbar3-mu03)/(std/sqrt(n3))
+print(t)
+qt(0.05, n3-1, lower.tail=FALSE)
 
 #vector <- dataset[,c], c is a column
 #std(dataset[,1])

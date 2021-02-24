@@ -25,7 +25,6 @@
 	\textbf{\underline{HMWK 1}}
 \end{center}
 
-
 %\vspace{0.5 \baselineskip}
 
 \begin{enumerate}
@@ -36,9 +35,9 @@
 				 background value---is rejected. The result surprises me as the concentration, 45.31 is much greater 
 				 than the background, 20. However, because the sample size of the population is only 3, an inaccurate result from the above test can be expected.
 				 \begin{tcolorbox}[colback=white, title=Work, coltitle=white]
-					 \texttt{[1] $n=3$; $\bar{x} = 45.31$; ste=5.26; $\mu_0 = 20$}\\
-					 \texttt{[2] t = ($\bar{x}-\mu_0$)/(ste)}\\
-					 \texttt{[3] 1-qt(0.01, 2)}\\
+					 \texttt{[1] $n=3$; $\bar{x} = 45.31$; ste=5.26; $\mu_0 = 20$ }\\
+					 \texttt{[2] t = ($\bar{x}-\mu_0$)/(ste) \textcolor{gray}{4.811787}}\\
+					 \texttt{[3] 1-qt(0.01, 2) \textcolor{gray}{7.964557}}\\
 				 \end{tcolorbox}
 				%The observed average 45.31 is greater than the actual (20) by more than 5.26.
 				%Furthermore, after carrying out a significance test at 0.01, the 
@@ -64,8 +63,8 @@
 				was not at most 200mg.
 				 \begin{tcolorbox}[colback=white, title=Work, coltitle=white]
 					 \texttt{[1] n = 47; $\bar{x} = 215$; s = 235; $\mu_0 = 200$ }\\
-					 \texttt{[2] t = ($\bar{x} - \mu_0$)/(s/$\sqrt{n}$) \# test statistic}\\
-					 \texttt{[3] qt(0.01, 46, lower.tail=FALSE) \# t critical value}\\
+					 \texttt{[2] t = ($\bar{x} - \mu_0$)/(s/$\sqrt{n}$) \textcolor{gray}{0.437595}\# test statistic}\\
+					 \texttt{[3] qt(0.01, 46, lower.tail=FALSE) \textcolor{gray}{2.410188} \# t critical value}\\
 				 \end{tcolorbox}
 		\end{enumerate}
 	\item[3.] No, the data does not suggest that the condition has not 
@@ -73,11 +72,12 @@
 
 				 \begin{tcolorbox}[colback=white, title=Work, coltitle=white]
 					 \texttt{[1] data <- read.csv('HW1prob3.csv')[,1]}\\
-					 \texttt{[2] n = length(data)}\\
-					 \texttt{[3] $\bar{x} = $ mean(data)}\\
+					 \texttt{[2] n = length(data) \textcolor{gray}{20}}\\
+					 \texttt{[3] $\bar{x} = $ mean(data) \textcolor{gray}{9.8525}}\\
 					 \texttt{[4] $\mu_0 = 9.75$ }\\
-					 \texttt{[5] std = sd(data) }\\
-					 \texttt{[6] qt(0.1, n, lower.tail=FALSE)}
+					 \texttt{[5] std = sd(data) \textcolor{gray}{0.09645697}}\\
+					 \texttt{[6] t=($\bar{x} - \mu_0$)/(std/sqrt(n)) \textcolor{gray}{4.752315}}\\
+					 \texttt{[7] qt(0.05, n-1, lower.tail=FALSE)\textcolor{gray}{1.325341}}
 				 \end{tcolorbox}
 	\item[4.]
 		\begin{enumerate}
@@ -90,24 +90,24 @@
 
 		\begin{tcolorbox}[colback=white, title=Work, coltitle=white]
 			\texttt{[1] $\hat{p}=16/800$; $p_0 = 1/75$; n = 800}\\
-			\texttt{[2] z = ($\hat{p} - p_0$)/($\sqrt{p_0\cdot(1-p_0)/n}$)}\\
-			\texttt{[3] qnorm(0.975) \# compare to z score}\\
-			\texttt{[4] pvalue=2*(1-pnorm(1.75))\# greater than significance level 0.05}\\ 
+			\texttt{[2] z = ($\hat{p} - p_0$)/($\sqrt{p_0\cdot(1-p_0)/n}$) \textcolor{gray}{1.64399}}\\
+			\texttt{[3] qnorm(0.975) \textcolor{gray}{1.959964} \# compare to z score}\\
+			\texttt{[4] pvalue=2*(1-pnorm(1.75)) \textcolor{gray}{0.08011831} \# greater than significance level 0.05}\\ 
 		\end{tcolorbox}
 
 			\item[(b)] The pvalue calculated came out to be 0.074, which is greater than 0.05. So, 
 				it would have been rejected at a significance level of 0.2.
 		\begin{tcolorbox}[colback=white, title=Work, coltitle=white]
-			\texttt{[1] 2*(1-pnorm(1.74)) > 0.05 \# Returns TRUE}\\
+			\texttt{[1] 2*(1-pnorm(1.74)) > 0.05 \textcolor{gray}{TRUE}}\\
 		\end{tcolorbox}
 		\end{enumerate}
-	\item[5.] Since the calculated zscore was 0.74 and is less than the calculated critical value (1.65), we fail to reject the null under an upper 
+	\item[5.] Since the calculated zscore was 0.74 and is less than the calculated critical value (1.64), we fail to reject the null under an upper 
 		tail test at significance level 0.05. So, it cannot be concluded that more than 10\% of the population has abstained from alcohol use.
 
 		\begin{tcolorbox}[colback=white, title=Work, coltitle=white]
 					 \texttt{[1] $\hat{p} = 51/462$; $p_0 = 0.1$; n=462}\\
-					 \texttt{[2] z = ($\hat{p} -p_0$)/($\sqrt{p_0\cdot(1-p_0)/n})$}\\
-					 \texttt{[3] qnorm(0.95)}
+					 \texttt{[2] z = ($\hat{p} -p_0$)/($\sqrt{p_0\cdot(1-p_0)/n})$ \textcolor{gray}{0.7443874}}\\
+					 \texttt{[3] qnorm(0.95) \textcolor{gray}{1.644854}}
 				 \end{tcolorbox}
 \end{enumerate}
 \end{document}
