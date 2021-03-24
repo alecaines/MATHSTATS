@@ -1,6 +1,7 @@
 ### P3 
 
-data3<-ex11_60 
+#data3<-ex11_60 
+data3<-read.csv("ex11-60.csv")
 
 #Factor cut_dpth, feed, cut_spd
 data3$Feed<-factor(data3$Feed,levels=c(0.061, 0.168),labels=c("0.061", "0.168"))

@@ -1,8 +1,8 @@
 #data<-ex11_17
 data <- read.csv("ex11-17.csv")
 
-install.packages("ggpubr")
-library("ggpubr")
+#install.packages("ggpubr")
+#library("ggpubr")
 
 #Have to factor both sand and fiber (make sure they're numeric)
 data$sand<-factor(data$sand,levels=c(0, 15, 30),labels=c("0", "15", "30"))
@@ -10,8 +10,8 @@ data$fiber<-factor(data$fiber,levels=c(0, .25, .5),labels=c("0", "0.25", "0.5"))
 
 ##1a
 #To visualize plot for wet(I don't know if its necessary for this part)
-ggboxplot(data, x="sand", y="wet", color="fiber")
-ggline(data, x="sand", y="wet", color="fiber", add= c("mean_se", "dotplot"))
+#ggboxplot(data, x="sand", y="wet", color="fiber")
+#ggline(data, x="sand", y="wet", color="fiber", add= c("mean_se", "dotplot"))
 
 #2-way Anova for wetness
 res.aov3<-aov(wet~sand*fiber, data=data)
@@ -50,8 +50,8 @@ pairwise.t.test(data$hardness, data$sand, p.adjust.method= "BH")
 
 ##1c
 #plot means of hardness 
-ggboxplot(data, x="sand", y="hardness", color="fiber")
-ggline(data, x="sand", y="hardness", color="fiber", add= c("mean_se", "dotplot"))
+#ggboxplot(data, x="sand", y="hardness", color="fiber")
+#ggline(data, x="sand", y="hardness", color="fiber", add= c("mean_se", "dotplot"))
 
 
 
