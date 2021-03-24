@@ -1,0 +1,49 @@
+\documentclass[12pt]{article}
+%compile using XeLaTeX
+\usepackage{diary_style}
+\setlength{\footskip}{\paperheight
+  -(0.75in+\voffset+\topmargin+\headheight+\headsep+\textheight)
+  -0.75in}
+
+%\fontspec{Times New Roman}
+
+\DeclareMathOperator{\di}{d\!}
+\newcommand*\Eval[3]{\left.#1\right\rvert_{#2}^{#3}}
+
+\begin{document}
+
+%\doublespacing
+\vspace{1.0 \baselineskip}
+
+\begin{flushright}
+	Alexander Caines\\
+	MATH-310\\
+	3-23-2021\\
+\end{flushright}
+
+\begin{center}
+	\textbf{\underline{HMWK 3}}
+\end{center}
+
+
+%\vspace{0.5 \baselineskip}
+
+\begin{enumerate}
+	\item[(2)] Because none of the elements in the F-Stat column are less than 0.05, it can be conclulded that there 
+	is no significance in effects between the fixed factors listed in the problem on the strength of paper. Find the ANOVA table below.\\
+		\begin{center}
+			\begin{tabular}{c|c|c|c|c}
+				& SS & dof & msq & f-stat\\
+				A & 6.94 & 1 & 6.94 & 2.97\\
+				B & 3.61 & 3 & 1.20 & 0.51\\
+				C & 12.33 & 2 & 6.17 & 0.38\\
+				AB & 4.05 & 1 & 4.03 & 4.73\\
+				Error & 14.04 & 6 & 2.34 & \\
+				\hline
+				Total & 40.7 & 13 & 20.68 & \\
+			\end{tabular}
+		\end{center}
+	\item[(4)]
+\end{enumerate}
+
+\end{document}
