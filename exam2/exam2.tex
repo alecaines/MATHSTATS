@@ -31,6 +31,26 @@
 \begin{enumerate}
 	\item[1.] The following are the results of running an ANOVA on the three factors (temperature, fabric denier, and air pressure) 
 	at each of their respective three levels.
+	\item[2.]
+		\begin{enumerate}
+			\item[(a)]
+			\item[(b)] The scatter plot indicates a positive, linear relatonship between height and price.
+				\begin{figure}[!h]
+					\centering
+					\includegraphics[width=8cm]{2b.png}
+				\end{figure}
+			\item[(c)] The equation of least squares is $y = 0.98715x + 23.77215$.
+			\item[(d)] At a height of 27, the corresponding price is $\$50.43$. Given the summary below, the 
+			corresponding residual is the result of the least squares (50.4252) plus the median residual (-0.8796), which is $49.55$.
+				\begin{figure}[!h]
+					\centering
+					\includegraphics[width=8cm]{2d.png}
+					\caption{Summary of linear model.}
+				\end{figure}
+			\item[(e)] In referring to the above figure, one will see that the adjusted R-squared is 0.96. So, 96\% 
+			of the variation in sales price can be attributed to the approximate linear relationship 
+			between truss height and price.
+		\end{enumerate}
 	\item[3.] 
 		\begin{enumerate}
 			\item[(a)] Below is the result of the following line of code, given the appropriate datset, $data$:
@@ -40,18 +60,14 @@
 					\includegraphics[width=8cm]{no3copmodel.png}
 					\caption{Model of NO3 and CO data.}
 				\end{figure}
-			\item[(****b)] The equation produced by the linear regression in R was 
+			\item[(b)] The equation produced by the linear regression in R was 
 $$\hat{y} = 13.63x + 21.97 $$ So, the prediction for
  $x=400$ is $5473.97$. Given that the mean of CO is $211.89$, the following work shows 
 		that the prediction interval is $(-139.5264, 563)$.
-			$$yhat = mean(data$CO);\text{ }t = 0.627;\text{ };error = 21.734;\text{ }r^2 = deviance(model)$$
-			$$bound = t_int*sqrt(error_int*(1/length(data)+1+r2))
-$$		
-			Since the predicted value lies outside of the prediction interavl, the linear regression 
-			could not have accurately predicted it.
-			\item[(c)] Without the largest value of CO, the fitted equation is $\hat{y} = 15.21x + 21.70$. Yielding $6105.7$ as 
-			the prediction: a number far outside the previous prediction interval. So the largest CO value has a substantial 
-			effect on the model.
+			$$\hat{y} = mean(data\$CO);\text{ }t = 0.627;\text{ } error = 21.734;\text{ }r^2 = deviance(model)$$
+			\item[(c)] Without the largest value of CO, the fitted equation is $\hat{y} = 15.21x + 21.70$, 
+			yielding $6105.7$ as the prediction: a number far outside the previous interval. So, 
+			the largest CO value has a substantial affect on the model.
 		\end{enumerate}
 	\item[4.] Below I show that $SSE = S_{yy} - \hat{\beta}_1S_{xy}$.
 		\begin{center}
