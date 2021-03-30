@@ -1,7 +1,6 @@
 data <- read.csv('ex11-57.csv')
 data$Fabric <- factor(data$Fabric, 
-                      levels = c(420, 630, 840),
-                      labels = c("420-D", "630-D", "840-D"))
+                      levels = c("420-D", "630-D", "840-D"))
 #res.aov2 <- aov(Response ~ Pressure + Temperature..Degrees. + Fabric, data=data)
 #summary(res.aov2)
 

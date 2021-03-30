@@ -30,10 +30,44 @@
 
 \begin{enumerate}
 	\item[1.] The following are the results of running an ANOVA on the three factors (temperature, fabric denier, and air pressure) 
-	at each of their respective three levels.
+	at each of their respective three levels. \emph{I was not able to factor the data for Fabric, so I will provide the results for 
+		temperature and pressure.} Note that as temperature increases, the affect on the response becomes
+		 more significant as the p-value decreases. For pressure, the same phenomenon occurs. As the pressure increases, the p-value 
+		decreases, and thus the significance of the affect increases. 
+			\begin{figure}[!h]
+				\centering
+				\includegraphics[width=8cm]{p1pics/8degrees.png}
+				\caption{Results ANOVA at 17.2 kPa}
+			\end{figure}
+			\begin{figure}[!h]
+				\centering
+				\includegraphics[width=8cm]{p1pics/50degrees.png}
+				\caption{Results ANOVA at 34.4 kPa}
+			\end{figure}
+			\begin{figure}[!h]
+				\centering
+				\includegraphics[width=8cm]{p1pics/75degrees.png}
+				\caption{Results ANOVA at 103.4 kPa}
+			\end{figure}
+			\begin{figure}[!h]
+				\centering
+				\includegraphics[width=8cm]{p1pics/17kPa.png}
+				\caption{Results of ANOVA for temperature at 8 Degrees}
+			\end{figure}
+			\begin{figure}[!h]
+				\centering
+				\includegraphics[width=8cm]{p1pics/34kPa.png}
+				\caption{Results ANOVA for temperature at 50 degrees}
+			\end{figure}
+			\begin{figure}[!h]
+				\centering
+				\includegraphics[width=8cm]{p1pics/103kPa.png}
+				\caption{Results ANOVA for temperature at 75 degrees}
+			\end{figure}
+	\newpage
 	\item[2.]
 		\begin{enumerate}
-			\item[(a)]
+			\item[(a)] Given that the points in the dataset (without having plotted them) seem to increase linearly when ordered, it seems as if the prices are deterministically related to the height.
 			\item[(b)] The scatter plot indicates a positive, linear relatonship between height and price.
 				\begin{figure}[!h]
 					\centering
@@ -83,7 +117,10 @@ $$\hat{y} = 13.63x + 21.97 $$ So, the prediction for
 		\end{aligned}
 		\end{math}
 		\end{center}
-
+	\item[5.] Although I was not able to format the data to run the ANOVAs properly, I would have gone about this 
+		problem by running an ANOVA to see if there is any significant affect on setosa by any of the listed factors.
+		If the ANOVA indicated that one of them did by, returning a p-value less than 0.05, then I would have run four pairwise t-tests to determine which one had the most significant affect. After determining this, I would have tested my assumptions by checking whether or not the dataset I was using satisifed homogeneity of variances. 
+		in order to deter
 \end{enumerate}
 
 \end{document}
