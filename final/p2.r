@@ -1,3 +1,4 @@
+#library(car)
 data <- read.csv('Final4.csv')
 
 mod2 <- function(s) if(s=="Yes") 1 else 0
@@ -60,4 +61,8 @@ head(death_rates)
 shapiro.test(death_rates$Death_yn)
 print("passes shapiro wilks")
 
-leveneTest(Death_yn ~ Race, data=death_rates)
+#leveneTest(Death_yn ~ Race, data=death_rates)
+model <- aov(Death_yn ~ Race, data=death_rates)
+summary(model)
+print("Since the p-value is less than 0.364, the death rate is not 
+      significant")
