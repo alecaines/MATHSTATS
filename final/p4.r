@@ -6,7 +6,8 @@ ser <- data[, c("Death_yn", "Ser")]
 ser <- ser[ser$Ser>0,]
 ser$Death_yn <- as.numeric(lapply(ser$Death_yn, mod2))
 
-chisq.test(ser)
+model <-aov(Death_yn ~ Ser, data=ser)
+summary(model)
 
 # ser$Death_yn <- as.numeric(lapply(ser$Death_yn, mod2))
 # ser$Ser <- as.numeric(ser$Ser)
@@ -25,7 +26,8 @@ sex$Death_yn <- as.numeric(lapply(sex$Death_yn, mod2))
 sex$Sex <- as.numeric(lapply(sex$Sex, mod2sex))
 sex <- sex[sex$Sex>0,]
 
-chisq.test(sex)
+sex_model <- aov(Death_yn ~ Sex, data=sex)
+summary(sex_model)
 # sex <- data[, c("Death_yn", "Sex")]
 # sex$Death_yn <- as.numeric(lapply(sex$Death_yn, mod2))
 # sex <- na.omit(sex)

@@ -62,7 +62,7 @@ head(death_rates)
 shapiro.test(death_rates$Death_yn)
 print("passes shapiro wilks")
 
-chisq.test(drs)
+chisq.test(death_rates)
 #leveneTest(Death_yn ~ Race, data=death_rates)
 model <- aov(Death_yn ~ Race, data=death_rates)
 summary(model)
