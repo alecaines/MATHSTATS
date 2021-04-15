@@ -14,6 +14,7 @@ d09 <- process(data, "0 - 9 Years")
 d6069 <- process(data, "60 - 69 Years")
 d80p <- process(data, "80+ Years")
 
+max(d3039, d1019, d4049, d7079, d2029, d09, d6069, d80p)
 print('The age group with teh highest death rate is 80+')
 
 death_rates <- data[, c("Age", "Death_yn")]

@@ -45,6 +45,7 @@ bdr
 hdr
 mdr
 wdr
+drs <- c(adr, amdr, bdr, hdr, mdr, wdr)
 print("there is a higher death rate among american indians than any other population")
 
 
@@ -61,8 +62,11 @@ head(death_rates)
 shapiro.test(death_rates$Death_yn)
 print("passes shapiro wilks")
 
+chisq.test(drs)
 #leveneTest(Death_yn ~ Race, data=death_rates)
 model <- aov(Death_yn ~ Race, data=death_rates)
 summary(model)
-print("Since the p-value is less than 0.364, the death rate is not 
-      significant")
+
+
+#print("Since the p-value is less than 0.364, the death rate is not 
+#      significant")
