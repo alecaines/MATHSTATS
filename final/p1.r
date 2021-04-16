@@ -24,9 +24,11 @@ t.test(new_f_deaths, new_m_deaths)
 data$Sex <- as.numeric(lapply(data$Sex, mod2sex))
 data$Death_yn <- as.numeric(lapply(data$Death_yn, mod2))>0
 #res.aov2 <- aov(Death_yn ~ Sex, data=data)
-sum(data$Death_yn)
-chisq.test(data$Death_yns)
-summary(res.aov2)
+sex_death_data <- data[,c("Sex", "Death_yn")]
+head(sex_death_data)
+chisq.test(sex_death_data)
+#chisq.test(data$Death_yns)
+
 print("Since the reported p-value is less than 0.05, we reject the 
       null that there is no significant difference.")
 #str(female_deaths)

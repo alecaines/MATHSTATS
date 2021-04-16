@@ -2,6 +2,7 @@
 data <- read.csv('Final4.csv')
 
 mod2 <- function(s) if(s=="Yes") 1 else 0
+mod2b <- function(s) if(s=="True") 1 else 0
 death_rate <- function(L) sum(L[L == 1])/length(L)
 
 white <- data[data$Race == "White, Non-Hispanic",]
@@ -39,34 +40,26 @@ nathawaiian <- data[data$Race == "Native Hawaiian/Other Pacific Islander, Non-Hi
 #nathawaiian_death <- as.numeric(lapply(nathawaiian$Death_yn, mod2))
 #shapiro.test(nathawaiian_death)
 
-adr
-amdr
-bdr
-hdr
-mdr
-wdr
+adr #asian death rate
+amdr #american indian death rate
+bdr #black death rate
+hdr #hispanic death rate
+mdr #multiple death rate
+wdr #white death rate
 drs <- c(adr, amdr, bdr, hdr, mdr, wdr)
+
 print("there is a higher death rate among american indians than any other population")
-
-
-#eths <- c(unique(data["Race"]))
-#df <- data.frame(matrix(ncol = length(eths), nrow = length(data["Race"])))
-#colnames(df) <- eths
-#for(e in eths){
-#  df$e <- data[data$Race == e,]
-#}
 
 death_rates <- data[, c("Race", "Death_yn")]
 death_rates$Death_yn <- as.numeric(lapply(death_rates$Death_yn, mod2))
-head(death_rates)
-shapiro.test(death_rates$Death_yn)
-print("passes shapiro wilks")
+head(death_rates); shapiro.test(death_rates$Death_yn); print("passes shapiro wilks")
 
-chisq.test(death_rates)
+#chisq.test(death_rates)
 #leveneTest(Death_yn ~ Race, data=death_rates)
 model <- aov(Death_yn ~ Race, data=death_rates)
 summary(model)
+death_rates$Death_yn <- as.numeric(lapply(death_rates$Death_yn, mod2b))
 
 
-#print("Since the p-value is less than 0.364, the death rate is not 
-#      significant")
+#print("Since the p-value is less than 0.05, the test shows that
+#     race does not  significant effect on death rate(definitely does, but why doesn't this show it??)")
