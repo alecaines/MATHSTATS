@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Debian) (preloaded format=xelatex 2020.12.23)  15 APR 2021 21:16
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Debian) (preloaded format=xelatex 2020.12.23)  16 APR 2021 08:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -798,8 +798,8 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 25.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 25.
-File: p2-m.png Graphic file (type bmp)
-<p2-m.png>
+File: p2-p2.png Graphic file (type bmp)
+<p2-p2.png>
 File: p3-p.png Graphic file (type bmp)
 <p3-p.png>
 
@@ -810,8 +810,8 @@ File: se-ascii-print.def 2019/11/29 v1.12 stringenc: Printable ASCII characters
 [1
 
 ]
-File: p5-p.png Graphic file (type bmp)
-<p5-p.png>
+File: p5-p2.png Graphic file (type bmp)
+<p5-p2.png>
  [2] [3]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 68.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 68.
@@ -824,7 +824,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 68.
  ) 
 Here is how much of TeX's memory you used:
  23038 strings out of 479712
- 455647 string characters out of 5891446
+ 455659 string characters out of 5891446
  840101 words of memory out of 5000000
  39887 multiletter control sequences out of 15000+600000
  544818 words of font info for 56 fonts, out of 8000000 for 9000

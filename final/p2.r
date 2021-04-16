@@ -50,16 +50,15 @@ drs <- c(adr, amdr, bdr, hdr, mdr, wdr)
 
 print("there is a higher death rate among american indians than any other population")
 
+
+
+
 death_rates <- data[, c("Race", "Death_yn")]
 death_rates$Death_yn <- as.numeric(lapply(death_rates$Death_yn, mod2))
 head(death_rates); shapiro.test(death_rates$Death_yn); print("passes shapiro wilks")
 
-#chisq.test(death_rates)
 #leveneTest(Death_yn ~ Race, data=death_rates)
-model <- aov(Death_yn ~ Race, data=death_rates)
-summary(model)
-death_rates$Death_yn <- as.numeric(lapply(death_rates$Death_yn, mod2b))
 
-
-#print("Since the p-value is less than 0.05, the test shows that
+chisq.test(death_rates$Death_yn)
+#print("Since the p-value is greater than 0.05, the test shows that
 #     race does not  significant effect on death rate(definitely does, but why doesn't this show it??)")
